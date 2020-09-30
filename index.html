@@ -22,11 +22,34 @@
             <p>el resultado saldrá en posiciones pares y nones</p>
             <p>Si ingresas la palabra hacker el resultado sera:hce akr</p>
             <p class="text-muted">PDD el cero cuenta como par</p>
-            
+
 
 
         </div>
     </div>
+    <script>
+        revisandoCadenas = () =>{
+            let palabras = document.getElementById('palabras').value;
+            palabras= palabras.split(/\r?\n/);
+            palabras.forEach(palabra=>){
+                let tamañoCadena = palabra.length;
+                let cadenaPar = "";
+                let cadenaNon = "";
+
+                for (let x=0; x<tamañoCadena; x++){
+                    let letra = palabra[x];
+                    if(x==0 || x%2===0){
+                        cadenaPar+=letra;
+
+                    }else{
+                        cadenaNon+= letra;
+                    }
+                }
+                respuesta[palabra] = [cadenaPar, cadenaNon];
+
+            }
+        }
+    </script>
     <p>Eseparrafp</p>
     
 </body>
